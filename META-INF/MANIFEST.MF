@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: cnd-jpa-exmple
+Bundle-SymbolicName: cnd2pojo-generator-example
+Bundle-Version: 1.0.0.qualifier
+Export-Package: .
+Require-Bundle: org.eclipse.xtext;bundle-version="2.4.3",
+ com.evrasoft.jcr.cnd;bundle-version="0.2.0",
+ org.eclipse.emf.mwe2.launch;bundle-version="2.4.1",
+ org.apache.log4j;bundle-version="1.2.15",
+ org.apache.commons.logging;bundle-version="1.1.1"

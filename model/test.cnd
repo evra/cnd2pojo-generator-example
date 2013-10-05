@@ -1,0 +1,3 @@
+[testNodeType3] 
+- propStr (STRING)
+- propBool (BOOLEAN)

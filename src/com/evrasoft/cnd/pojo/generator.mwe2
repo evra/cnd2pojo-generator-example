@@ -1,0 +1,34 @@
+module sample.SampleGenerator
+ 
+import org.eclipse.emf.mwe.utils.*
+ 
+var targetDir = "src-gen"
+var modelPath = "model"
+ 
+Workflow {
+ 
+    bean = StandaloneSetup {
+        registerGeneratedEPackage = "com.evrasoft.jcr.cnd.CndPackage"
+    }
+ 
+    component = DirectoryCleaner {
+        directory = targetDir
+    }
+ 
+    component = org.eclipse.xtext.mwe.Reader {
+        path = modelPath
+        
+       register = com.evrasoft.jcr.CndStandaloneSetup {}
+        loadResource = {
+            slot = "model"
+        }
+    }
+ 
+    component = org.eclipse.xtext.generator.GeneratorComponent {
+        register = com.evrasoft.cnd.pojo.CndPojoGeneratorSetup {}
+        slot = 'model'
+        outlet = {
+            path = targetDir
+        }
+    }
+}
